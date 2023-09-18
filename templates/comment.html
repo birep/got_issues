@@ -1,0 +1,10 @@
+<div class="mb-4">
+    <a href="https://github.com/{{ comment.username }}" class="text-blue-500 hover:underline">{{ comment.username }}</a>
+    <p>Created at: {{ comment.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+    {% if comment.show_updated_at %}
+    <p>Updated at: {{ comment.updated_at.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+    {% endif %}
+    <div class="markdown-body">
+        {{ comment.body | safe }}
+    </div>
+</div>
